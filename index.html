@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#9cc9e8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="С ДР, папа!">
+  <!-- Link preview in messengers. The og/twitter URLs must be absolute: update them if the GitHub repo name changes. -->
+  <title>Открытка с Днём Рождения любимому Папе!</title>
+  <meta name="description" content="Открой меня 🎁">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="С Днём Рождения, папа!">
+  <meta property="og:title" content="Открытка с Днём Рождения любимому Папе!">
+  <meta property="og:description" content="Открой меня 🎁">
+  <meta property="og:url" content="https://r0m4k.github.io/happy-birthday-dad/">
+  <meta property="og:image" content="https://r0m4k.github.io/happy-birthday-dad/photos/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Нарисованный торт со свечами и надпись «С днём рождения, папа!»">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Открытка с Днём Рождения любимому Папе!">
+  <meta name="twitter:description" content="Открой меня 🎁">
+  <meta name="twitter:image" content="https://r0m4k.github.io/happy-birthday-dad/photos/preview.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="photos/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="photos/icon-512.png">
+  <link rel="apple-touch-icon" href="photos/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=45">
+</head>
+<body>
+
+  <!-- Shown on laptops / desktops -->
+  <main id="desktop">
+    <div class="scene" data-w="1600"></div>
+    <div class="note">
+      <h1 class="hand-title">С днём рождения!</h1>
+      <div class="cake-slot"></div>
+      <p class="desk-lead">Эта открытка нарисована для телефона</p>
+      <p class="desk-sub">Наведи камеру iPhone на QR-код или открой эту ссылку на телефоне.</p>
+      <div class="qr-wrap">
+        <div id="qr"></div>
+        <a id="qr-link" href="#"></a>
+      </div>
+    </div>
+  </main>
+
+  <!-- The phone experience -->
+  <div id="app">
+    <div class="scene" data-w="400"></div>
+
+    <section id="intro" class="screen show">
+      <button class="gift" id="gift" aria-label="Открыть подарок"></button>
+      <p class="intro-tap" id="tapHint">Нажми на подарок</p>
+      <div class="intro-hello" id="hello">
+        <h1 class="big-title" id="helloTitle"></h1>
+        <p class="hello-sub">Эта открытка для тебя!</p>
+        <button class="btn" id="startBtn">Открыть</button>
+      </div>
+    </section>
+
+    <section id="deck" class="screen">
+      <div class="bars" id="bars"></div>
+      <div class="stack" id="stack"></div>
+      <div class="swipe-hint" id="swipeHint">
+        <svg viewBox="0 0 120 40" class="arrow"><path d="M110 22 C 80 14, 45 26, 12 19 M24 8 L10 19 L23 31" fill="none" stroke="#3b2a1e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>листай</span>
+      </div>
+    </section>
+
+    <section id="finale" class="screen">
+      <div class="finale-top" id="finaleTop">
+        <h2 class="finale-title">Загадай желание…</h2>
+        <p class="finale-sub">…и нажми на свечи, чтобы задуть их</p>
+      </div>
+      <div class="cake-slot" id="finaleCake"></div>
+      <div class="final-msg" id="finalMsg">
+        <h1 class="big-title" id="finalTitle"></h1>
+        <p class="sign" id="finalSign"></p>
+        <button class="btn small again" id="againBtn">Посмотреть ещё раз</button>
+      </div>
+    </section>
+
+    <div id="rotate"><span>📱</span>Поверни телефон вертикально</div>
+  </div>
+
+  <canvas id="fx"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js" defer></script>
+  <script src="app.js?v=45" defer></script>
+</body>
+</html>
